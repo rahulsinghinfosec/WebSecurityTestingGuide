@@ -73,6 +73,24 @@ They include</p>
 </ul>
 <h4>Enumerate Applications on Webserver</h4>
 <p><b>ID: WSTG-INFO-04</b></p>
-<p></p>
+<p>Different environments run different web applications. Before the tester proceeds further, its important to know the testing web application.It may be possible that different web applications might be running on the same IP address</p>
+<ul>
+  <li>Different Based URL: Example : http://ip/url1, http://ip/url2, http://ip/url3 might be running 3 different web applications altogether.</li>
+  <li>Non-Standard Port Numbers: It is often possible that the web application might be running on a different port, which might not be provided to you.</li>
+  <li>Virtual Hosts: There might be subdomains to the web application running different web application altogether.</li>
+</ul>
+<h4>Review Webpage Content For Information Leakage</h4>
+<p><b>ID: WSTG-INFO-05</b></p>
+<p>It is common for web app developers to write comments on the web page, but it could also reveal some sensitive information. New frameworks like ReactJS, AngularJS might, etc. might make it difficult to read the source code, but still there are ways around that.</p>
+<p>Look for robots.txt files, META tags, comments, script tags (Try to find API Keys, hardcoded varibles; it also helps you understand the application better), source map files. For example a tester sees: <b>/static/js/main.chunk.js</b>, he can add <b>.map</b> at the end, thus making it <b>/static/js/main.chunk.js.map</b>. Source map files may reveal some sensitive infomation.</p>
+<h4>Identify Application Entry Points</h4>
+<p><b>ID: WSTG-INFO-06</b></p>
+<p>It is important to know the web application and the attack surface, to know what you are dealing with and what can you do to exploit it. A good knowledge of request methods, headers, etc might be helpful. Here you look for url paramaters, headers, cookies set, redirects, forbidden pages/directories, etc.</p>
+<p>Tool : OWASP Attack Surface Detector</p>
 
+<h4>Map Execution Paths through Application</h4>
+<p>ID: WSTG-INFO-07</p>
+<p>Methods: Code Review, Automated Spidering </p>
+
+<h4>Fingerprint Web Application Framework</h4>
 

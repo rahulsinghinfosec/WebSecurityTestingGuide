@@ -93,4 +93,23 @@ They include</p>
 <p>Methods: Code Review, Automated Spidering </p>
 
 <h4>Fingerprint Web Application Framework</h4>
+<p><b><ID: WSTG-INFO-08/b></p>
+<p>Knowing the web application components that are being tested significantly helps in the testing process and will also drastically reduce the effort required during the test.There are a couple of things that can help you identify the framework.</p>
+<ul>
+	<li>HTTP Headers : You may look for special headers that may be pointing to the Framework being used. Headers like, <b>X-Powered-By, X-Generator</b>.They are often obfuscated.</li>
+	<li>Cookies : This is a bit more reliable than the previous approach. There are framework specific cookies that can help you identify the framework.</li>
+	<li>HTML Source Code : Look for framework specific paths, files, and even comments written can help.</li>
+	<li>Specific Files and Folders : Try bruteforcing and looking in robots.txt file.</li>
+	<li>File Extensions</li>
+</ul>
+<p>Tools : WhatWeb, Wappalyzer</p>
 
+<h4>Fingerprint Web Application</h4>
+<p><b>ID: WSTG-INFO-09</b></p>
+<p>This is merged into <b>Fingerprint Web APplication Framework</b></p>
+
+<h4>Map Application Architecture</h4>
+<p><b>ID: WSTG-INFO-10</b></p>
+<p>The application architecture needs to be mapped through some test to determine what different components are used to build the web application.In small setups, such as a simple PHP application, a single server might be used that serves the PHP application, and perhaps also the authentication mechanism.</p>
+
+<p>On more complex setups, such as an online bank system, multiple servers might be involved. These may include a reverse proxy, a front-end web server, an application server, and a database server or LDAP server. Each of these servers will be used for different purposes and might even be segregated in different networks with firewalls between them. Sometimes there will be reverse proxies and you can identify them using thier headers. </p>
